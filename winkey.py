@@ -69,8 +69,8 @@ def main():
         try:
             clear_screen()
             run_banner("\033[1;37m\033[1m┌────────────────────────────────────────────────────────────────────────────┐")
-            run_banner("\033[1;37m\033[1m|Windows activation key validator\033[1;37m\033[1m                                                 |")
-            run_banner("\033[1;37m\033[1m|Note: Only check 1 key each!\033[1;37m\033[1m                                                 |") 
+            run_banner("\033[1;37m\033[1m|Windows activation key validator\033[1;37m\033[1m                                            |")
+            run_banner("\033[1;37m\033[1m|Note: Only check 1 key each!\033[1;37m\033[1m                                                |") 
             run_banner("\033[1;37m\033[1m|----------------------------------------------------------------------------|") 
             run_banner("\033[1;37m\033[1m|Support for:\033[1;37m\033[1m                                                                |")
             run_banner("\033[1;37m\033[1m|\x1b[38;5;226mWin 11 RTM IoTEnterpriseSK\033[1;37m\033[1m                                                  |")
@@ -80,10 +80,9 @@ def main():
             run_banner("\033[1;37m\033[1m|\x1b[38;5;226mOffice\033[1;37m\033[1m                                                                      |")
             run_banner("\033[1;37m\033[1m|----------------------------------------------------------------------------|") 
             run_banner("\033[1;37m\033[1m|Be sure the key in format \033[1;31m\033[1m\033[1mxxxxx-xxxxx-xxxxx-xxxxx-xxxxx\033[1;37m\033[1m                     |")
-            run_banner("\033[1;37m\033[1m|Example: \033[1;31m\033[1m\033[1m26QN8-828KP-V62WD-C86V7-9BXVX \033[1;37m\033[1mhoặc \033[1;31m\033[1m\033[1mY6JNK-P2XWX-6B9KJ-8FWDV-DRR94\033[1;37m\033[1m |")
+            run_banner("\033[1;37m\033[1m|Example: \033[1;31m\033[1m\033[1m26QN8-828KP-V62WD-C86V7-9BXVX \033[1;37m\033[1mhoặc \033[1;31m\033[1m\033[1mY6JNK-P2XWX-6B9KJ-8FWDV-DRR94\033[1;37m\033[1m   |")
             run_banner("\033[1;37m\033[1m└────────────────────────────────────────────────────────────────────────────┘")
             key = input("\n\033[1;37m\033[1mEnter the activation key: ")
-            print("Please wait! We are checking...")
             result = check_key(key)
             if "error" in result:
                 print("Error!", result["error"])
