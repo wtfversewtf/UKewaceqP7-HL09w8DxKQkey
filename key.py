@@ -83,6 +83,7 @@ def main():
             run_banner("\033[1;37m\033[1m|Example: \033[1;31m\033[1m\033[1m26QN8-828KP-V62WD-C86V7-9BXVX \033[1;37m\033[1mhoặc \033[1;31m\033[1m\033[1mY6JNK-P2XWX-6B9KJ-8FWDV-DRR94\033[1;37m\033[1m |")
             run_banner("\033[1;37m\033[1m└────────────────────────────────────────────────────────────────────────────┘")
             key = input("\n\033[1;37m\033[1mEnter the activation key: ")
+            print("Please wait! We are checking...")
             result = check_key(key)
             if "error" in result:
                 print("Error!", result["error"])
