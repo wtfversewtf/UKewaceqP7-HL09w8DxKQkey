@@ -64,7 +64,7 @@ def check_key(key):
     else:
         return {"error": "Lỗi kết nối: %d" % response.status_code}
 
-def main():
+def checker():
     try:
         clear_screen()
         run_banner("\033[1;37m\033[1m┌────────────────────────────────────────────────────────────────────────────┐")
@@ -81,7 +81,12 @@ def main():
         run_banner("\033[1;37m\033[1m|Be sure the key in format \033[1;31m\033[1m\033[1mxxxxx-xxxxx-xxxxx-xxxxx-xxxxx\033[1;37m\033[1m                     |")
         run_banner("\033[1;37m\033[1m|Example: \033[1;31m\033[1m\033[1m26QN8-828KP-V62WD-C86V7-9BXVX \033[1;37m\033[1mhoặc \033[1;31m\033[1m\033[1mY6JNK-P2XWX-6B9KJ-8FWDV-DRR94\033[1;37m\033[1m   |")
         run_banner("\033[1;37m\033[1m└────────────────────────────────────────────────────────────────────────────┘")
-        key = input("\n\033[1;37m\033[1mEnter the activation key: ")
+        while True:
+            key = input("\n\033[1;37m\033[1mEnter the activation key: ")
+            if len(key) != 29:
+                print("Invalid fomart")
+            else: 
+                break
         print("Checking...")
         result = check_key(key)
         if "error" in result:
@@ -100,6 +105,10 @@ def main():
     except KeyboardInterrupt:
         print("\n\x1b[38;5;203mExit.")
         sys.exit()
+    except json.decoder.JSONDecodeError:
+        print("Please enter the correct fomart")
+    except requests.exceptions.ConnectionError:
+        print("Please connect to your network")
 
 if __name__ == "__main__":
-    main()
+    checker()
